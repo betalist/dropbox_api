@@ -14,7 +14,8 @@ module DropboxApi::Metadata
   #       "read_only": true,
   #       "parent_shared_folder_id": "84528192421",
   #       "modified_by": "dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc"
-  #     }
+  #     },
+  #     "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   #   }
   class File < Base
     field :name, String
@@ -25,6 +26,7 @@ module DropboxApi::Metadata
     field :server_modified, Time
     field :rev, String
     field :size, Integer
+    field :content_hash, String
 
     def to_hash
       super.merge(".tag" => "file")
